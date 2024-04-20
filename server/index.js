@@ -6,7 +6,7 @@ const userRouter = require("./routes/user");
 const path = require("path");
 const app = express();
 
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 
 app.use("/admin", adminRouter)
@@ -19,6 +19,6 @@ app.use("/*", (req, res) => {
 
 // Connect to MongoDB
 // DONT MISUSE THIS THANKYOU!!
-mongoose.connect('mongodb+srv://kirattechnologies:iRbi4XRDdM7JMMkl@cluster0.e95bnsi.mongodb.net/admin?authSource=admin&replicaSet=atlas-ue73sj-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true', { useNewUrlParser: true, useUnifiedTopology: true, dbName: "courses" });
+mongoose.connect('mongodb+srv://nosangdev:VxBhIfk6UHV5Dn84@cluster0.brzbs4w.mongodb.net/courses?retryWrites=true&w=majority&appName=Cluster0', { useNewUrlParser: true, useUnifiedTopology: true, dbName: "courses" });
 
 app.listen(3000, () => console.log('Server running on port 3000'));
